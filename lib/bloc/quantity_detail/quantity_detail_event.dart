@@ -1,0 +1,1 @@
+enum QuantityDetailEvent { increment, decrement }
