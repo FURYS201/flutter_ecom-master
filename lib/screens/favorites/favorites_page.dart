@@ -30,33 +30,11 @@ Future<List<Cast>> fetchFavorites() async {
   }
 }
 
-// class CartPage extends StatefulWidget {
-//   @override
-//   _CartPageState createState() => _CartPageState();
-// }
-
-// class CartPage extends StatelessWidget {
-//   final Future<List<Cast>> products;
-//   CartPage({Key? key, required this.products}) : super(key: key);
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: MyHomePage(
-//           title: 'Product Navigation demo home page', products: products),
-//     );
-//   }
-// }
 
 class MyHomePage extends StatelessWidget {
   static String routeName = "/favorites";
   final Future<List<Cast>> products;
-  
+
   MyHomePage({Key? key, required this.products}) : super(key: key);
 
   // final items = Product.getProducts();
@@ -197,50 +175,3 @@ class ProductBoxList extends StatelessWidget {
   ) {}
 }
 
-// class CartIcon extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         height: 100,
-//         child: Padding(
-//             padding: EdgeInsets.only(left: 30, right: 30),
-//             child: Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: <Widget>[
-//                   Text(
-//                     "Total",
-//                     style: TextStyle(
-//                         fontSize: 22,
-//                         color: black.withOpacity(0.5),
-//                         fontWeight: FontWeight.w600),
-//                   ),
-//                   Text(
-//                     "\$ 508.00",
-//                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
-//                   ),
-//                   SizedBox(
-//                     height: 30,
-//                   ),
-//                   Padding(
-//                     padding: const EdgeInsets.only(left: 20, right: 10),
-//                     child: FlatButton(
-//                         shape: RoundedRectangleBorder(
-//                             borderRadius: BorderRadius.circular(30)),
-//                         color: black,
-//                         onPressed: () {},
-//                         child: Container(
-//                           height: 50,
-//                           child: Center(
-//                             child: Text(
-//                               "CHECKOUT",
-//                               style: TextStyle(
-//                                   color: white,
-//                                   fontSize: 15,
-//                                   fontWeight: FontWeight.w600),
-//                             ),
-//                           ),
-//                         )),
-//                   )
-//                 ])));
-//   }
-// }
