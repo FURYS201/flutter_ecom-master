@@ -22,7 +22,9 @@ Future<List<Cast>> fetchFavorites() async {
   final response = await http.get(
       Uri.parse('https://624aab21fd7e30c51c101b00.mockapi.io/ShoeListModel'));
   if (response.statusCode == 200) {
-    return parseProducts(response.body);
+    return parseProducts(utf8.decode(response.bodyBytes));
+  } else if (response.statusCode == 404) {
+    throw Exception('Not Found');
   } else {
     throw Exception('Unable to fetch products from the REST API');
   }
@@ -33,30 +35,29 @@ Future<List<Cast>> fetchFavorites() async {
 //   _CartPageState createState() => _CartPageState();
 // }
 
-class CartPage extends StatelessWidget {
-  final Future<List<Cast>> products;
-  CartPage({Key? key, required this.products}) : super(key: key);
+// class CartPage extends StatelessWidget {
+//   final Future<List<Cast>> products;
+//   CartPage({Key? key, required this.products}) : super(key: key);
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(
-          title: 'Product Navigation demo home page', products: products),
-    );
-  }
-}
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       home: MyHomePage(
+//           title: 'Product Navigation demo home page', products: products),
+//     );
+//   }
+// }
 
 class MyHomePage extends StatelessWidget {
   static String routeName = "/favorites";
-  final String title;
   final Future<List<Cast>> products;
-  MyHomePage({Key? key, required this.title, required this.products})
-      : super(key: key);
+  
+  MyHomePage({Key? key, required this.products}) : super(key: key);
 
   // final items = Product.getProducts();
   @override

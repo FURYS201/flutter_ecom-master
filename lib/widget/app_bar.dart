@@ -47,7 +47,7 @@ Widget getAppBar(context) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => CartPage(
+                          builder: (_) => MyHomePage(
                                 products: fetchFavorites(),
                               )));
                 }),

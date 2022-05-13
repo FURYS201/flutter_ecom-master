@@ -31,5 +31,5 @@ final Map<String, WidgetBuilder> routes = {
   ProfileScreen.routeName: (context) => ProfileScreen(),
   SeeMoreScreen.routeName: (context) => SeeMoreScreen(products: fetchApi()),
   HiveScreen.routeName: (context) => HiveScreen(),
-  MyHomePage.routeName: (context) => CartPage(products: fetchFavorites()),
+  MyHomePage.routeName: (context) => MyHomePage(products: fetchFavorites()),
 };
